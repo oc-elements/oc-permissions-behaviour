@@ -1,360 +1,360 @@
 <script>
 
-// permissions taken directly from old console, url's do not reflect current app.
-// link: https://bitbucket.org/ordercloud/console/annotate/b53ae22790d7f8a538beef07d7b589783be0c65a/common/components/BaseDisplayController.php?at=development&fileviewer=file-view-default
-  var permissions = [
-    {
-      "name": "Orders",
-      "icon": 'icon-bag',
-      "url": "/orders/active",
-      "submenus": [
+    // permissions taken directly from old console, url's do not reflect current app.
+    // link: https://bitbucket.org/ordercloud/console/annotate/b53ae22790d7f8a538beef07d7b589783be0c65a/common/components/BaseDisplayController.php?at=development&fileviewer=file-view-default
+    var permissions = [
         {
-          "name": "Active",
-          "url": "/orders/active",
-          "permissions": {"Order Viewer", "Organisation Status Editor"}
-        },
-        {
-          "name": "New",
-          "url": "/callcentre/order/index",
-          "permissions": [
-            "Order Creator",
-            "Order Editor",
-            "User Creator",
-            "User Viewer",
-            "User Editor",
-            "Connection Viewer",
-            "Product Viewer",
-            "Product Tag Manager"
-          ]
-        },
-        {
-          "name": "Search",
-          "url": "/callcentre/order/findOrder",
-          "permissions": ["Order Viewer"]
-        },
-        {
-          "name": "Scheduled",
-          "url": "/orders/manage/scheduledOrders",
-          "permissions": ["Order Viewer"]
-        },
-        {
-          "name": "Completed",
-          "url": "/orders/manage/completedOrders",
-          "permissions": ["Order Viewer"]
-        },
-        {
-          "name": "Rejected",
-          "url": "/orders/manage/rejectedOrders",
-          "permissions": ["Order Viewer"]
-        },
-        {
-          "name": "Statistics",
-          "url": "/dashboard/default/Sales",
-          "permissions": ["Order Viewer"]
-        }
-      ]
+            "name": "Orders",
+            "icon": 'icons:shopping-cart',
+            "url": "/orders/active",
+            "submenus": [
+                {
+                    "name": "Active",
+                    "url": "/orders/active",
+                    "permissions": ["Order Viewer", "Organisation Status Editor"]
+                },
+                {
+                    "name": "New",
+                    "url": "/callcentre/order/index",
+                    "permissions": [
+                        "Order Creator",
+                        "Order Editor",
+                        "User Creator",
+                        "User Viewer",
+                        "User Editor",
+                        "Connection Viewer",
+                        "Product Viewer",
+                        "Product Tag Manager"
+                    ]
+                },
+                {
+                    "name": "Search",
+                    "url": "/callcentre/order/findOrder",
+                    "permissions": ["Order Viewer"]
+                },
+                {
+                    "name": "Scheduled",
+                    "url": "/orders/manage/scheduledOrders",
+                    "permissions": ["Order Viewer"]
+                },
+                {
+                    "name": "Completed",
+                    "url": "/orders/manage/completedOrders",
+                    "permissions": ["Order Viewer"]
+                },
+                {
+                    "name": "Rejected",
+                    "url": "/orders/manage/rejectedOrders",
+                    "permissions": ["Order Viewer"]
+                },
+                {
+                    "name": "Statistics",
+                    "url": "/dashboard/default/Sales",
+                    "permissions": ["Order Viewer"]
+                }
+            ]
 
-    },
-    {
-      "url" : "/callcentre/order/index",
-      "name" : "Call Centre",
-      "icon" : 'icon-earphones-alt',
-      "submenus" : []
-    },
-    {
-      "url" : "/users/manage/deliveryAgents",
-      "name" : "Delivery",
-      "icon" : 'fa fa-truck',
-      "submenus" : [
-        {
-          "name" : "Delivery Agents",
-          "url" : "/users/manage/deliveryAgents",
-          "permissions" : ["Delivery Agent Editor", "Delivery Agent Viewer"]
         },
         {
-          "name" : "New Delivery Agent",
-          "url" : "/users/manage/InviteDeliveryAgent",
-          "permissions" : ["Delivery Agent Editor", "Delivery Agent Viewer"]
+            "url" : "/callcentre/order/index",
+            "name" : "Call Centre",
+            "icon" : 'hardware:headset-mic',
+            "submenus" : []
         },
         {
-          "name" : "Statistics",
-          "url" : "/dashboard/default/Deliveries",
-          "permissions" : ["Administrator"]
-        }
-      ]
+            "url" : "/users/manage/deliveryAgents",
+            "name" : "Delivery",
+            "icon" : 'maps:local-shipping',
+            "submenus" : [
+                {
+                    "name" : "Delivery Agents",
+                    "url" : "/users/manage/deliveryAgents",
+                    "permissions" : ["Delivery Agent Editor", "Delivery Agent Viewer"]
+                },
+                {
+                    "name" : "New Delivery Agent",
+                    "url" : "/users/manage/InviteDeliveryAgent",
+                    "permissions" : ["Delivery Agent Editor", "Delivery Agent Viewer"]
+                },
+                {
+                    "name" : "Statistics",
+                    "url" : "/dashboard/default/Deliveries",
+                    "permissions" : ["Administrator"]
+                }
+            ]
 
-    },
-    {
-      "name" : "Users",
-      "url" : "/users/manage/index",
-      "icon" : 'icon-users',
-      "submenus" : [
-        {
-          "name" : "View Staff",
-          "url" : "/users/manage/index",
-          "permissions" : ["Organisation Viewer"]
         },
         {
-          "name" : "Add staff",
-          "url" : "/users/manage/add",
-          "permissions" : ["User Editor", "User Viewer"]
+            "name" : "Users",
+            "url" : "/users/manage/index",
+            "icon" : 'social:group',
+            "submenus" : [
+                {
+                    "name" : "View Staff",
+                    "url" : "/users/manage/index",
+                    "permissions" : ["Organisation Viewer"]
+                },
+                {
+                    "name" : "Add staff",
+                    "url" : "/users/manage/add",
+                    "permissions" : ["User Editor", "User Viewer"]
+                },
+                {
+                    "name" : "Find User",
+                    "url" : "/users/manage/find",
+                    "permissions" : ["User Viewer"]
+                },
+                {
+                    "name" : "My Profile",
+                    "url" : "/users/manage/profile",
+                    "permissions" : ["User Editor", "User Viewer"]
+                },
+                {
+                    "name" : "Pending invitations",
+                    "url" : "/users/invitations",
+                    "permissions" : ["User Editor", "User Viewer"]
+                }
+            ]
         },
         {
-          "name" : "Find User",
-          "url" : "/users/manage/find",
-          "permissions" : ["User Viewer"]
+            "name" : "Local Products",
+            "icon" : 'icons:store',
+            "url" : "/product/manage",
+            "submenus" : [
+                {
+                    "name" : "All",
+                    "url" : "/product/manage",
+                    "permissions" : ["Product Manager"]
+                },
+                {
+                    "name" : "New",
+                    "url" : "/product/manage/add",
+                    "permissions" : ["Product Manager"]
+                },
+                {
+                    "name" : "Extra Sets",
+                    "url" : "/product/LocalProductsAddon/extraSets",
+                    "permissions" : ["Product Extra Manager"]
+                },
+                {
+                    "name" : "Option Sets",
+                    "url" : "/product/LocalProductsAddon/optionSets",
+                    "permissions" : ["Product Option Manager"]
+                },
+                {
+                    "name" : "Attributes",
+                    "url" : "/product/attributes/local",
+                    "permissions" : ["Product Attribute Manager"]
+                },
+                {
+                    "name" : "Import Global Products",
+                    "url" : "/product/manage/importProducts",
+                    "permissions" : ["Product Importer Manager"]
+                }
+            ]
         },
         {
-          "name" : "My Profile",
-          "url" : "/users/manage/profile",
-          "permissions" : ["User Editor", "User Viewer"]
+            "name" : "Global Products",
+            "url" : "/product/library",
+            "icon" : 'icons:language',
+            "submenus" : [
+                {
+                    "name" : "All",
+                    "url" : "/product/library",
+                    "permissions" : ["Product Library Manager"]
+                },
+                {
+                    "name" : "New",
+                    "url" : "/product/library/create",
+                    "permissions" : ["Product Library Manager"]
+                },
+                {
+                    "name" : "Option Sets",
+                    "url" : "/product/GlobalProductsAddon/optionSets",
+                    "permissions" : ["Product Library Manager"]
+                },
+                {
+                    "name" : "Extra Sets",
+                    "url" : "/product/GlobalProductsAddon/extraSets",
+                    "permissions" : ["Product Library Manager"]
+                },
+                {
+                    "name" : "Attributes",
+                    "url" : "/product/attributes/library",
+                    "permissions" : ["Product Library Manager"]
+                }
+            ]
         },
         {
-          "name" : "Pending invitations",
-          "url" : "/users/invitations",
-          "permissions" : ["User Editor", "User Viewer"]
+            "name" : "Product Tags",
+            "url" : "/product/tags/product",
+            "icon" : 'image:style',
+            "submenus" : [
+                {
+                    "name" : "Menu Tags",
+                    "url" : "/product/tags/menu",
+                    "permissions" : ["Product Tag Manager"]
+                },
+                {
+                    "name" : "Product Tags",
+                    "url" : "/product/tags/product",
+                    "permissions" : ["Product Tag Manager"]
+                },
+                {
+                    "name" : "Search Tags",
+                    "url" : "/product/tags/search",
+                    "permissions" : ["Product Tag Manager"]
+                }
+            ]
+        },
+        {
+            "name" : "PLU Mappings",
+            "url" : "/plu/mapping/local",
+            "icon" : 'icons:fingerprint',
+            "submenus" : [
+                {
+                    "name" : "Local",
+                    "url" : "/plu/mapping/local",
+                    "permissions" : ["PLU Mapping Manager"],
+                },
+                {
+                    "name" : "Library",
+                    "url" : "/plu/mapping/library",
+                    "permissions" : ["PLU Mapping Manager"],
+                },
+            ]
+        },
+        {
+            "name" : "Reports",
+            "url" : "/account/transaction/payments",
+            "icon" : 'icons:timeline',
+            "submenus" : [
+                {
+                    "name" : "Order Items Report",
+                    "url" : "/orders/reports/items",
+                    "permissions" : ["Order Viewer"]
+                },
+                {
+                    "name" : "Payments Report",
+                    "url" : "/account/transaction/payments",
+                    "permissions" : ["Payment Viewer"]
+                },
+                {
+                    "name" : "Balances Report",
+                    "url" : "/account/transaction/balances",
+                    "permissions" : ["Connection Viewer", "Transaction Viewer"]
+                },
+                {
+                    "name" : "Fraud Report",
+                    "url" : "/users/deliveryagent/fraud",
+                    "permissions" : ["Administrator"]
+                },
+                {
+                    "name" : "Transactions Report",
+                    "url" : "/account/transaction",
+                    "permissions" : ["Organisation Viewer", "Transaction Viewer"]
+                },
+                {
+                    "name" : "Settlements Report",
+                    "url" : "/account/transaction/settlements",
+                    "permissions" : ["Organisation Viewer", "Transaction Viewer"]
+                },
+                {
+                    "name" : "Delivery Agent Transactions",
+                    "url" : "/account/transaction/deliveryAgents",
+                    "permissions" : ["Delivery Agent Viewer", "Transaction Viewer"]
+                }
+            ]
+        },
+        {
+            "name" : "Settings",
+            "url" : "/settings/order/settings",
+            "icon" : 'icons:settings',
+            "submenus" : [
+                {
+                    "name" : "Create organisation",
+                    "url" : "/connection/manage/createOrganisation",
+                    "permissions" : ["Organisation Manager"],
+                },
+                {
+                    "name" : "Organisation",
+                    "url" : "/settings/order/settings",
+                    "permissions" : ["Organisation Manager"]
+                },
+                {
+                    "name" : "Fees",
+                    "url" : "/connection/fees/ManageConnectionFees",
+                    "permissions" : ["Organisation Manager"]
+                },
+                {
+                    "name" : "Notifications",
+                    "url" : "/settings/notifications",
+                    "permissions" : ["Notification Manager"]
+                },
+                {
+                    "name" : "Rest Hooks",
+                    "url" : "/developer/resthooks",
+                    "permissions" : ["ReST Hook Manager"]
+                }
+            ]
+        },
+        {
+            "name": "Admin",
+            "icon": 'icons:perm-identity',
+            "url": "/connection/manage/createOrganisation",
+            "submenus": [
+                {
+                    "name": "Active Connections",
+                    "url": "/connection/manage?active=1",
+                    "permissions": ["Administrator"]
+                },
+                {
+                    "name": "Pending Connections",
+                    "url": "/connection/manage/pendingOrganisations",
+                    "permissions": ["Administrator"]
+                },
+                {
+                    "name": "New Connection",
+                    "url": "/connection/manage/newConnection",
+                    "permissions": ["Administrator"]
+                },
+                {
+                    "name": "New User",
+                    "url": "/users/manage/invite",
+                    "permissions": ["Administrator"]
+                },
+                {
+                    "name": "Overview",
+                    "url": "/orders/manage/overview",
+                    "permissions": ["Administrator"]
+                },
+                {
+                    "name": "Connection Settings",
+                    "url": "/connection/manage/settings?connectionTypeId=1",
+                    "permissions": ["Administrator"]
+                },
+                {
+                    "name": "General Settings",
+                    "url": "/settings/tagsetting",
+                    "permissions": ["Administrator"]
+                },
+                {
+                    "name": "Menu permissions",
+                    "url": "/developer/menu",
+                    "permissions": ["Administrator"]
+                }
+            ]
         }
-      ]
-    },
-    {
-      "name" : "Local Products",
-      "icon" : 'fa fa-cube',
-      "url" : "/product/manage",
-      "submenus" : [
-        {
-          "name" : "All",
-          "url" : "/product/manage",
-          "permissions" : ["Product Manager"]
-        },
-        {
-          "name" : "New",
-          "url" : "/product/manage/add",
-          "permissions" : ["Product Manager"]
-        },
-        {
-          "name" : "Extra Sets",
-          "url" : "/product/LocalProductsAddon/extraSets",
-          "permissions" : ["Product Extra Manager"]
-        },
-        {
-          "name" : "Option Sets",
-          "url" : "/product/LocalProductsAddon/optionSets",
-          "permissions" : ["Product Option Manager"]
-        },
-        {
-          "name" : "Attributes",
-          "url" : "/product/attributes/local",
-          "permissions" : ["Product Attribute Manager"]
-        },
-        {
-          "name" : "Import Global Products",
-          "url" : "/product/manage/importProducts",
-          "permissions" : ["Product Importer Manager"]
+    ];
+
+    window.OC = window.OC || {};
+    window.OC.Behaviours = window.OC.Behaviours || {};
+    OC.Behaviours.Permissions = {
+        properties : {
+            permissions : {
+                type: Array,
+                value: permissions
+            }
         }
-      ]
-    },
-    {
-      "name" : "Global Products",
-      "url" : "/product/library",
-      "icon" : 'icon-layers',
-      "submenus" : [
-        {
-          "name" : "All",
-          "url" : "/product/library",
-          "permissions" : ["Product Library Manager"]
-        },
-        {
-          "name" : "New",
-          "url" : "/product/library/create",
-          "permissions" : ["Product Library Manager"]
-        },
-        {
-          "name" : "Option Sets",
-          "url" : "/product/GlobalProductsAddon/optionSets",
-          "permissions" : ["Product Library Manager"]
-        },
-        {
-          "name" : "Extra Sets",
-          "url" : "/product/GlobalProductsAddon/extraSets",
-          "permissions" : ["Product Library Manager"]
-        },
-        {
-          "name" : "Attributes",
-          "url" : "/product/attributes/library",
-          "permissions" : ["Product Library Manager"]
-        }
-      ]
-    },
-    {
-      "name" : "Product Tags",
-      "url" : "/product/tags/product",
-      "icon" : 'fa fa-tags',
-      "submenus" : [
-        {
-          "name" : "Menu Tags",
-          "url" : "/product/tags/menu",
-          "permissions" : ["Product Tag Manager"]
-        },
-        {
-          "name" : "Product Tags",
-          "url" : "/product/tags/product",
-          "permissions" : ["Product Tag Manager"]
-        },
-        {
-          "name" : "Search Tags",
-          "url" : "/product/tags/search",
-          "permissions" : ["Product Tag Manager"]
-        }
-      ]
-    },
-    {
-      "name" : "PLU Mappings",
-      "url" : "/plu/mapping/local",
-      "icon" : 'fa fa-barcode',
-      "submenus" : [
-        {
-          "name" : "Local",
-          "url" : "/plu/mapping/local",
-          "permissions" : ["PLU Mapping Manager"],
-        },
-        {
-          "name" : "Library",
-          "url" : "/plu/mapping/library",
-          "permissions" : ["PLU Mapping Manager"],
-        },
-      ]
-    },
-    {
-      "name" : "Reports",
-      "url" : "/account/transaction/payments",
-      "icon" : 'fa fa-line-chart',
-      "submenus" : [
-        {
-          "name" : "Order Items Report",
-          "url" : "/orders/reports/items",
-          "permissions" : ["Order Viewer"]
-        },
-        {
-          "name" : "Payments Report",
-          "url" : "/account/transaction/payments",
-          "permissions" : ["Payment Viewer"]
-        },
-        {
-          "name" : "Balances Report",
-          "url" : "/account/transaction/balances",
-          "permissions" : ["Connection Viewer", "Transaction Viewer"]
-        },
-        {
-          "name" : "Fraud Report",
-          "url" : "/users/deliveryagent/fraud",
-          "permissions" : ["Administrator"]
-        },
-        {
-          "name" : "Transactions Report",
-          "url" : "/account/transaction",
-          "permissions" : ["Organisation Viewer", "Transaction Viewer"]
-        },
-        {
-          "name" : "Settlements Report",
-          "url" : "/account/transaction/settlements",
-          "permissions" : ["Organisation Viewer", "Transaction Viewer"]
-        },
-        {
-          "name" : "Delivery Agent Transactions",
-          "url" : "/account/transaction/deliveryAgents",
-          "permissions" : ["Delivery Agent Viewer", "Transaction Viewer"]
-        }
-      ]
-    },
-    {
-      "name" : "Settings",
-      "url" : "/settings/order/settings",
-      "icon" : 'fa fa-wrench',
-      "submenus" : [
-        {
-          "name" : "Create organisation",
-          "url" : "/connection/manage/createOrganisation",
-          "permissions" : ["Organisation Manager"],
-        },
-        {
-          "name" : "Organisation",
-          "url" : "/settings/order/settings",
-          "permissions" : ["Organisation Manager"]
-        },
-        {
-          "name" : "Fees",
-          "url" : "/connection/fees/ManageConnectionFees",
-          "permissions" : ["Organisation Manager"]
-        },
-        {
-          "name" : "Notifications",
-          "url" : "/settings/notifications",
-          "permissions" : ["Notification Manager"]
-        },
-        {
-          "name" : "Rest Hooks",
-          "url" : "/developer/resthooks",
-          "permissions" : ["ReST Hook Manager"]
-        }
-      ]
-    },
-    {
-      "name": "Admin",
-      "icon": 'icon-game-controller',
-      "url": "/connection/manage/createOrganisation",
-      "submenus": [
-        {
-          "name": "Active Connections",
-          "url": "/connection/manage?active=1",
-          "permissions": ["Administrator"]
-        },
-        {
-          "name": "Pending Connections",
-          "url": "/connection/manage/pendingOrganisations",
-          "permissions": ["Administrator"]
-        },
-        {
-          "name": "New Connection",
-          "url": "/connection/manage/newConnection",
-          "permissions": ["Administrator"]
-        },
-        {
-          "name": "New User",
-          "url": "/users/manage/invite",
-          "permissions": ["Administrator"]
-        },
-        {
-          "name": "Overview",
-          "url": "/orders/manage/overview",
-          "permissions": ["Administrator"]
-        },
-        {
-          "name": "Connection Settings",
-          "url": "/connection/manage/settings?connectionTypeId=1",
-          "permissions": ["Administrator"]
-        },
-        {
-          "name": "General Settings",
-          "url": "/settings/tagsetting",
-          "permissions": ["Administrator"]
-        },
-        {
-          "name": "Menu permissions",
-          "url": "/developer/menu",
-          "permissions": ["Administrator"]
-        }
-      ]
     }
-  ];
-
-window.OC = window.OC || {};
-window.OC.Behaviours = window.OC.Behaviours || {};
-OC.Behaviours.Permissions = {
-  properties : {
-    permissions : {
-      type: Array,
-      value: permissions
-    }
-  }
-}
 </script>
